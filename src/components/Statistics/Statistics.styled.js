@@ -10,7 +10,7 @@ export const Wrapper = styled.section`
 `;
 
 export const Title = styled.h2`
-margin: 25px auto;
+    margin: 25px auto;
 `;
 
 export const StatisticsList = styled.ul`
@@ -28,10 +28,10 @@ export const StatisticsItem = styled.li`
 `;
 
 export const StatisticsLabel = styled.span`
-font-size: 20px;
-margin-bottom:10px;
-`
+    font-size: 20px;
+    margin-bottom:10px;
+`;
 
 export const StatisticsPercentage = styled.span`
-font-size:26px;
-`
+    font-size:26px;
+`;
