@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { Wrapper, StatisticsList, StatisticsItem, Title, StatisticsPercentage, StatisticsLabel } from "./Statistics.styled";
 
-export const Statistics = ({ data }) => {
+export const Statistics = ({ data, title }) => {
     return (
         <Wrapper className="statistics">
-            <Title className="title">Upload stats</Title>
+            {title && <Title className="title">{title}</Title>}
             <StatisticsList className="stat-list">
                 {data.map(item => {
                     return (

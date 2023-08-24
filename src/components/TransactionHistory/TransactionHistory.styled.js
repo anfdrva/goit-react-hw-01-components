@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.table`
-margin: 0 auto 50px;
+    margin: 0 auto 50px;
     table-layout: fixed;
     width: 700px;
     border-collapse: collapse;
@@ -13,6 +13,7 @@ export const TableTitle = styled.th`
     border: 1px solid blue;
     padding: 12px;
     background-color: lightskyblue;
+    text-transform: uppercase;
 `;
 
 export const TableSection = styled.td`
