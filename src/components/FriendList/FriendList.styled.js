@@ -16,14 +16,25 @@ gap:10px;
 padding: 10px;
 `;
 
-const getStatusColor = props => {
-    if (props.isOnline) {
-        return 'green'
-    } else {
-        return 'red'
-    }
-};
+// const getStatusColor = props => {
+//     console.log(props.isOnline);
+//     if (props.isOnline) {
+//         return 'green'
+//     } else {
+//         return 'red'
+//     }
+// };
 
 export const Status = styled.span`
-color: ${getStatusColor};
+//border: black;
+border-radius: 50%;
+height: 15px;
+width: 15px;
+background: ${props => {
+     if (props.$isonline) {
+         return 'green'
+     } else {
+         return 'red'
+     }
+}}
 `; 
