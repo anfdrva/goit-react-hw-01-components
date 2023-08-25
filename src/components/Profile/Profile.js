@@ -3,30 +3,29 @@ import PropTypes from "prop-types";
 
 export const Profile = ({ item: { username, tag, location, avatar, stats } }) => {
     return (
-        <UserProfile className="profile">
-            <UserDescription className="description">
+        <UserProfile>
+            <UserDescription>
                 <UserAvatar
                     src={avatar}
                     alt="User avatar"
-                    className="avatar"
                 />
-                <UserName className="name">{username}</UserName>
-                <UserTextDescription className="tag">@{tag}</UserTextDescription>
-                <UserTextDescription className="location">{location}</UserTextDescription>
+                <UserName>{username}</UserName>
+                <UserTextDescription>@{tag}</UserTextDescription>
+                <UserTextDescription>{location}</UserTextDescription>
             </UserDescription>
 
-            <UserStatsList className="stats">
+            <UserStatsList>
                 <li>
-                    <span className="label">Followers</span><br/>
-                    <UserStatsQuantity className="quantity">{stats.followers}</UserStatsQuantity>
+                    <span>Followers</span><br/>
+                    <UserStatsQuantity>{stats.followers}</UserStatsQuantity>
                 </li>
                 <li>
-                    <span className="label">Views</span><br/>
-                    <UserStatsQuantity className="quantity">{stats.views}</UserStatsQuantity>
+                    <span>Views</span><br/>
+                    <UserStatsQuantity>{stats.views}</UserStatsQuantity>
                 </li>
                 <li>
-                    <span className="label">Likes</span><br/>
-                    <UserStatsQuantity className="quantity">{stats.likes}</UserStatsQuantity>
+                    <span>Likes</span><br/>
+                    <UserStatsQuantity>{stats.likes}</UserStatsQuantity>
                 </li>
             </UserStatsList>
         </UserProfile>
@@ -35,14 +34,14 @@ export const Profile = ({ item: { username, tag, location, avatar, stats } }) =>
 
 Profile.propTypes = {
     item: PropTypes.shape({
-        username: PropTypes.string,
-        tag: PropTypes.string,
-        location: PropTypes.string,
-        avatar: PropTypes.string,
+        username: PropTypes.string.isRequired,
+        tag: PropTypes.string.isRequired,
+        location: PropTypes.string.isRequired,
+        avatar: PropTypes.string.isRequired,
         stats: PropTypes.shape({
-            followers: PropTypes.number,
-            views: PropTypes.number,
-            likes: PropTypes.number,
-        })
-    }),
+            followers: PropTypes.number.isRequired,
+            views: PropTypes.number.isRequired,
+            likes: PropTypes.number.isRequired,
+        }).isRequired
+    }).isRequired,
 };

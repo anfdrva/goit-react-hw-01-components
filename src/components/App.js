@@ -1,8 +1,8 @@
 import { Profile } from "./Profile/Profile";
-import userItems from '../user.json';
-import statisticsData from '../data.json';
-import friendList from '../friends.json';
-import transactionsList from '../transactions.json';
+import userItems from '../data/user.json';
+import statisticsData from '../data/data.json';
+import friendList from '../data/friends.json';
+import transactionsList from '../data/transactions.json';
 import { GlobalStyle } from "./GlobalStyle";
 import { Statistics } from "./Statistics/Statistics";
 import { FriendList } from "./FriendList/FriendList";

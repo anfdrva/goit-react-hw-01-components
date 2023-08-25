@@ -3,7 +3,7 @@ import { Wrapper, TableTitle, TableSection } from "./TransactionHistory.styled";
 
 export const TransactionHistory = ({ transaction }) => {
     return (
-        <Wrapper className="transaction-history">
+        <Wrapper>
             <thead>
                 <tr>
                     <TableTitle>Type</TableTitle>
@@ -29,10 +29,10 @@ export const TransactionHistory = ({ transaction }) => {
 TransactionHistory.propTypes = {
     transaction: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string,
-            type: PropTypes.string,
-            amount: PropTypes.string,
-            currency: PropTypes.string,
-        })
-    )
-}
+            id: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+            amount: PropTypes.string.isRequired,
+            currency: PropTypes.string.isRequired,
+        }).isRequired
+    ).isRequired,
+};

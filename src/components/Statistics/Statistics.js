@@ -3,14 +3,14 @@ import { Wrapper, StatisticsList, StatisticsItem, Title, StatisticsPercentage, S
 
 export const Statistics = ({ data, title }) => {
     return (
-        <Wrapper className="statistics">
-            {title && <Title className="title">{title}</Title>}
-            <StatisticsList className="stat-list">
+        <Wrapper>
+            {title && <Title>{title}</Title>}
+            <StatisticsList>
                 {data.map(item => {
                     return (
-                        <StatisticsItem className="item" key={item.id}>
-                            <StatisticsLabel className="label">{item.label}</StatisticsLabel>
-                            <StatisticsPercentage className="percentage">{item.percentage}%</StatisticsPercentage>
+                        <StatisticsItem key={item.id}>
+                            <StatisticsLabel>{item.label}</StatisticsLabel>
+                            <StatisticsPercentage>{item.percentage}%</StatisticsPercentage>
                         </StatisticsItem>
                     )   
                 })}
@@ -20,11 +20,12 @@ export const Statistics = ({ data, title }) => {
 };
 
 Statistics.propTypes = {
+    title: PropTypes.string,
     data: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string,
-            label: PropTypes.string,
-            percentage: PropTypes.number,
-        })
-    ),
-}
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+            percentage: PropTypes.number.isRequired,
+        }).isRequired
+    ).isRequired,
+};
